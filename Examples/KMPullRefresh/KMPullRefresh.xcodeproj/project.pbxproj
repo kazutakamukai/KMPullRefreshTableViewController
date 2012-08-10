@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F11B887F15D39CD800F12D89 /* Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = F11B887E15D39CD800F12D89 /* Diamond.png */; };
+		F139351B15D1F6B6007213ED /* KMPullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F139351A15D1F6B6007213ED /* KMPullRefreshTableView.m */; };
+		F139352315D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F139352215D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m */; };
+		F14AB12715CB764900495802 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14AB12615CB764900495802 /* UIKit.framework */; };
+		F14AB12915CB764900495802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14AB12815CB764900495802 /* Foundation.framework */; };
+		F14AB12B15CB764900495802 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14AB12A15CB764900495802 /* CoreGraphics.framework */; };
+		F14AB13115CB764900495802 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F14AB12F15CB764900495802 /* InfoPlist.strings */; };
+		F14AB13315CB764900495802 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB13215CB764900495802 /* main.m */; };
+		F14AB13715CB764900495802 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB13615CB764900495802 /* AppDelegate.m */; };
+		F14AB15B15CB826A00495802 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F14AB14F15CB826A00495802 /* Arrow.png */; };
+		F14AB15C15CB826A00495802 /* KMPullRefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15115CB826A00495802 /* KMPullRefreshTableFooterView.m */; };
+		F14AB15D15CB826A00495802 /* KMPullRefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15315CB826A00495802 /* KMPullRefreshTableHeaderView.m */; };
+		F14AB15F15CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15715CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m */; };
+		F14AB16015CB826A00495802 /* KMPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15915CB826A00495802 /* KMPullRefreshTableViewController.m */; };
+		F14AB18315CBAE1F00495802 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB18215CBAE1F00495802 /* RootViewController.m */; };
+		F14AB18E15CBB00800495802 /* RootViewController+UITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB18D15CBB00800495802 /* RootViewController+UITableViewDataSource.m */; };
+		F14AB19115CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB19015CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F11B887E15D39CD800F12D89 /* Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diamond.png; sourceTree = "<group>"; };
+		F139351915D1F6B6007213ED /* KMPullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableView.h; sourceTree = "<group>"; };
+		F139351A15D1F6B6007213ED /* KMPullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableView.m; sourceTree = "<group>"; };
+		F139352115D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h"; sourceTree = "<group>"; };
+		F139352215D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m"; sourceTree = "<group>"; };
+		F14AB12215CB764900495802 /* KMPullRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMPullRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14AB12615CB764900495802 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F14AB12815CB764900495802 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F14AB12A15CB764900495802 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F14AB12E15CB764900495802 /* KMPullRefresh-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KMPullRefresh-Info.plist"; sourceTree = "<group>"; };
+		F14AB13015CB764900495802 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F14AB13215CB764900495802 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F14AB13415CB764900495802 /* KMPullRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KMPullRefresh-Prefix.pch"; sourceTree = "<group>"; };
+		F14AB13515CB764900495802 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F14AB13615CB764900495802 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F14AB14F15CB826A00495802 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
+		F14AB15015CB826A00495802 /* KMPullRefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableFooterView.h; sourceTree = "<group>"; };
+		F14AB15115CB826A00495802 /* KMPullRefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableFooterView.m; sourceTree = "<group>"; };
+		F14AB15215CB826A00495802 /* KMPullRefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableHeaderView.h; sourceTree = "<group>"; };
+		F14AB15315CB826A00495802 /* KMPullRefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableHeaderView.m; sourceTree = "<group>"; };
+		F14AB15615CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KMPullRefreshTableViewController+UIScrollViewDelegate.h"; sourceTree = "<group>"; };
+		F14AB15715CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KMPullRefreshTableViewController+UIScrollViewDelegate.m"; sourceTree = "<group>"; };
+		F14AB15815CB826A00495802 /* KMPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableViewController.h; sourceTree = "<group>"; };
+		F14AB15915CB826A00495802 /* KMPullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableViewController.m; sourceTree = "<group>"; };
+		F14AB15A15CB826A00495802 /* KMPullRefreshTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableViewDelegate.h; sourceTree = "<group>"; };
+		F14AB18115CBAE1F00495802 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = RootViewController/RootViewController.h; sourceTree = "<group>"; };
+		F14AB18215CBAE1F00495802 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = RootViewController/RootViewController.m; sourceTree = "<group>"; };
+		F14AB18C15CBB00800495802 /* RootViewController+UITableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RootViewController+UITableViewDataSource.h"; path = "RootViewController/RootViewController+UITableViewDataSource.h"; sourceTree = "<group>"; };
+		F14AB18D15CBB00800495802 /* RootViewController+UITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RootViewController+UITableViewDataSource.m"; path = "RootViewController/RootViewController+UITableViewDataSource.m"; sourceTree = "<group>"; };
+		F14AB18F15CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RootViewController+KMPullRefreshTableViewDelegate.h"; path = "RootViewController/RootViewController+KMPullRefreshTableViewDelegate.h"; sourceTree = "<group>"; };
+		F14AB19015CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RootViewController+KMPullRefreshTableViewDelegate.m"; path = "RootViewController/RootViewController+KMPullRefreshTableViewDelegate.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F14AB11F15CB764900495802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14AB12715CB764900495802 /* UIKit.framework in Frameworks */,
+				F14AB12915CB764900495802 /* Foundation.framework in Frameworks */,
+				F14AB12B15CB764900495802 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F14AB11715CB764900495802 = {
+			isa = PBXGroup;
+			children = (
+				F14AB12C15CB764900495802 /* KMPullRefresh */,
+				F14AB12515CB764900495802 /* Frameworks */,
+				F14AB12315CB764900495802 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F14AB12315CB764900495802 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB12215CB764900495802 /* KMPullRefresh.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F14AB12515CB764900495802 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB12615CB764900495802 /* UIKit.framework */,
+				F14AB12815CB764900495802 /* Foundation.framework */,
+				F14AB12A15CB764900495802 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F14AB12C15CB764900495802 /* KMPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB14A15CB800200495802 /* Controllers */,
+				F14AB14E15CB826A00495802 /* KMPullRefreshTableViewController */,
+				F14AB12D15CB764900495802 /* Supporting Files */,
+			);
+			path = KMPullRefresh;
+			sourceTree = "<group>";
+		};
+		F14AB12D15CB764900495802 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB12E15CB764900495802 /* KMPullRefresh-Info.plist */,
+				F14AB12F15CB764900495802 /* InfoPlist.strings */,
+				F14AB13215CB764900495802 /* main.m */,
+				F14AB13415CB764900495802 /* KMPullRefresh-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F14AB14A15CB800200495802 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB14B15CB800B00495802 /* AppDelegate */,
+				F14AB17F15CBADDD00495802 /* RootViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F14AB14B15CB800B00495802 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB13515CB764900495802 /* AppDelegate.h */,
+				F14AB13615CB764900495802 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F14AB14E15CB826A00495802 /* KMPullRefreshTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB16115CB831100495802 /* Controllers */,
+				F14AB16215CB833E00495802 /* Protocols */,
+				F14AB16315CB837000495802 /* Views */,
+				F14AB16415CB839B00495802 /* Resource Files */,
+			);
+			name = KMPullRefreshTableViewController;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		F14AB16115CB831100495802 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB15815CB826A00495802 /* KMPullRefreshTableViewController.h */,
+				F14AB15915CB826A00495802 /* KMPullRefreshTableViewController.m */,
+				F14AB15615CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.h */,
+				F14AB15715CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m */,
+				F139352115D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h */,
+				F139352215D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F14AB16215CB833E00495802 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB15A15CB826A00495802 /* KMPullRefreshTableViewDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F14AB16315CB837000495802 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F139351915D1F6B6007213ED /* KMPullRefreshTableView.h */,
+				F139351A15D1F6B6007213ED /* KMPullRefreshTableView.m */,
+				F14AB15215CB826A00495802 /* KMPullRefreshTableHeaderView.h */,
+				F14AB15315CB826A00495802 /* KMPullRefreshTableHeaderView.m */,
+				F14AB15015CB826A00495802 /* KMPullRefreshTableFooterView.h */,
+				F14AB15115CB826A00495802 /* KMPullRefreshTableFooterView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F14AB16415CB839B00495802 /* Resource Files */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB16515CB83AA00495802 /* Images */,
+			);
+			path = "Resource Files";
+			sourceTree = "<group>";
+		};
+		F14AB16515CB83AA00495802 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB14F15CB826A00495802 /* Arrow.png */,
+				F11B887E15D39CD800F12D89 /* Diamond.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		F14AB17F15CBADDD00495802 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F14AB18115CBAE1F00495802 /* RootViewController.h */,
+				F14AB18215CBAE1F00495802 /* RootViewController.m */,
+				F14AB18C15CBB00800495802 /* RootViewController+UITableViewDataSource.h */,
+				F14AB18D15CBB00800495802 /* RootViewController+UITableViewDataSource.m */,
+				F14AB18F15CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.h */,
+				F14AB19015CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F14AB12115CB764900495802 /* KMPullRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14AB13A15CB764900495802 /* Build configuration list for PBXNativeTarget "KMPullRefresh" */;
+			buildPhases = (
+				F14AB11E15CB764900495802 /* Sources */,
+				F14AB11F15CB764900495802 /* Frameworks */,
+				F14AB12015CB764900495802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMPullRefresh;
+			productName = KMPullRefresh;
+			productReference = F14AB12215CB764900495802 /* KMPullRefresh.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F14AB11915CB764900495802 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = kazutakamukai;
+			};
+			buildConfigurationList = F14AB11C15CB764900495802 /* Build configuration list for PBXProject "KMPullRefresh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F14AB11715CB764900495802;
+			productRefGroup = F14AB12315CB764900495802 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F14AB12115CB764900495802 /* KMPullRefresh */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F14AB12015CB764900495802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14AB13115CB764900495802 /* InfoPlist.strings in Resources */,
+				F14AB15B15CB826A00495802 /* Arrow.png in Resources */,
+				F11B887F15D39CD800F12D89 /* Diamond.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F14AB11E15CB764900495802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F14AB13315CB764900495802 /* main.m in Sources */,
+				F14AB13715CB764900495802 /* AppDelegate.m in Sources */,
+				F14AB15C15CB826A00495802 /* KMPullRefreshTableFooterView.m in Sources */,
+				F14AB15D15CB826A00495802 /* KMPullRefreshTableHeaderView.m in Sources */,
+				F14AB15F15CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m in Sources */,
+				F14AB16015CB826A00495802 /* KMPullRefreshTableViewController.m in Sources */,
+				F14AB18315CBAE1F00495802 /* RootViewController.m in Sources */,
+				F14AB18E15CBB00800495802 /* RootViewController+UITableViewDataSource.m in Sources */,
+				F14AB19115CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m in Sources */,
+				F139351B15D1F6B6007213ED /* KMPullRefreshTableView.m in Sources */,
+				F139352315D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F14AB12F15CB764900495802 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F14AB13015CB764900495802 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F14AB13815CB764900495802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F14AB13915CB764900495802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F14AB13B15CB764900495802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KMPullRefresh/KMPullRefresh-Prefix.pch";
+				INFOPLIST_FILE = "KMPullRefresh/KMPullRefresh-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F14AB13C15CB764900495802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KMPullRefresh/KMPullRefresh-Prefix.pch";
+				INFOPLIST_FILE = "KMPullRefresh/KMPullRefresh-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F14AB11C15CB764900495802 /* Build configuration list for PBXProject "KMPullRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14AB13815CB764900495802 /* Debug */,
+				F14AB13915CB764900495802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F14AB13A15CB764900495802 /* Build configuration list for PBXNativeTarget "KMPullRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14AB13B15CB764900495802 /* Debug */,
+				F14AB13C15CB764900495802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F14AB11915CB764900495802 /* Project object */;
+}
