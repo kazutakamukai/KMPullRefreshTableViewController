@@ -13,13 +13,14 @@
 
 - (BOOL)application:(UIApplication *)application
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  UIWindow *window = self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   RootViewController *rootViewController = [[RootViewController alloc] initWithStyle:UITableViewStylePlain];
   rootViewController.loadMoreEnabled                       = YES;
   rootViewController.loadMoreTapEnabled                    = YES;
   rootViewController.animateReturnAfterRefreshWithDuration = 0.2f;
   
+  UIWindow *window = self.window;
   window.rootViewController = rootViewController;
   [window makeKeyAndVisible];
   

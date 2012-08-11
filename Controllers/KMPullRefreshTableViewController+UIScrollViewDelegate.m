@@ -31,9 +31,10 @@
   CGFloat threshold    = -(headerHeight + 15.0f);
   
   if (tableHeaderView.status == KMPullRefreshTableHeaderViewLoading) {
-    if (tableView.dragging && threshold <= topOffset && topOffset < headerHeight) {
+    if (tableView.dragging &&
+        threshold <= topOffset && topOffset < headerHeight) {
       CGFloat offset = MAX(-tableView.contentOffset.y, 0.0f);
-      offset = MIN(offset, 60.0f);
+      offset = MIN(offset, TABLE_HEADER_VIEW_HEIGHT);
       tableView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
 		}
     return;
@@ -52,7 +53,9 @@
   CGFloat contentHeight   = CGRectGetMinY(tableFooterView.frame) - CGRectGetHeight(tableView.frame);
   CGFloat thresholdOffset = contentHeight - 250.0f;
   
-  if (!self.loadMoreTapEnabled && 0 < thresholdOffset && thresholdOffset <= topOffset && topOffset < contentHeight) {
+  if (!self.loadMoreTapEnabled &&
+      0.0f < thresholdOffset && thresholdOffset <= topOffset &&
+      topOffset < contentHeight) {
     [self _loadMore];
   }
 }

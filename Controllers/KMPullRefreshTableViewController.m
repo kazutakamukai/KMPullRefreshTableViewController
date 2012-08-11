@@ -33,12 +33,15 @@
   pullRefreshTableView.delegate   = tableView.delegate;
   pullRefreshTableView.dataSource = tableView.dataSource;
   
-  CGFloat tableWidth = CGRectGetWidth(pullRefreshTableView.frame);
-  _tableHeaderView = [[KMPullRefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, -60.0f, tableWidth, 60.0f)];
+  CGFloat tableWidth       = CGRectGetWidth(pullRefreshTableView.frame);
+  CGRect  tableHeaderFrame = CGRectMake(0.0f, -TABLE_HEADER_VIEW_HEIGHT, tableWidth, TABLE_HEADER_VIEW_HEIGHT);
+  _tableHeaderView = [[KMPullRefreshTableHeaderView alloc] initWithFrame:tableHeaderFrame];
   [pullRefreshTableView addSubview:_tableHeaderView];
   if (self.loadMoreEnabled) {
-    pullRefreshTableView.tableFooterView = _tableFooterView = [[KMPullRefreshTableFooterView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableWidth, 44.0f)
-                                                                                               loadMoreTapEnabled:self.loadMoreTapEnabled];
+    CGRect tableFooterFrame = CGRectMake(0.0f, 0.0f, tableWidth, TABLE_FOOTER_VIEW_HEIGHT);
+    _tableFooterView = [[KMPullRefreshTableFooterView alloc] initWithFrame:tableFooterFrame
+                                                        loadMoreTapEnabled:self.loadMoreTapEnabled];
+    pullRefreshTableView.tableFooterView = _tableFooterView;
     [_tableFooterView.loadMoreButton addTarget:self
                                         action:@selector(_loadMore)
                               forControlEvents:UIControlEventTouchDown];

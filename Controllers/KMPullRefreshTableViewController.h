@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "KMPullRefreshTableViewDelegate.h"
 
+#define TABLE_HEADER_VIEW_HEIGHT 60.0f
+#define TABLE_FOOTER_VIEW_HEIGHT 44.0f
+
 @class KMPullRefreshTableHeaderView, KMPullRefreshTableFooterView;
 
 @interface KMPullRefreshTableViewController : UITableViewController<KMPullRefreshTableViewDelegate>
