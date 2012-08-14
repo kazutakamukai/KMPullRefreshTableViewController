@@ -12,8 +12,9 @@
 
 @optional
 - (void)pullRefreshTableViewWillRefresh:(UITableView *)tableView;
+- (void)pullRefreshTableViewDidRefresh:(UITableView *)tableView;
 - (void)pullRefreshTableViewWillLoadMore:(UITableView *)tableView;
-- (void)pullRefreshTableViewDidLoad:(UITableView *)tableView;
+- (void)pullRefreshTableViewDidLoadMore:(UITableView *)tableView;
 - (void)pullRefreshTableViewWillReloadData:(UITableView *)tableView;
 - (void)pullRefreshTableViewDidReloadData:(UITableView *)tableView;
 

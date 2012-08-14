@@ -75,8 +75,7 @@
   _status = status;
 }
 
-#pragma mark -
-#pragma mark Private
+#pragma mark - Private
 
 - (void)_startIndicator {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

@@ -83,8 +83,7 @@
   _status = status;
 }
 
-#pragma mark -
-#pragma mark Private
+#pragma mark - Private
 
 - (void)_animateRotationToUpper:(BOOL)Upper {
   CGFloat beginAngle = Upper ? 0.0f : M_PI;

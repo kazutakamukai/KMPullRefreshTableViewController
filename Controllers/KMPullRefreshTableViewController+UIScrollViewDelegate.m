@@ -69,10 +69,15 @@
     [self _setTableHeaderViewHidden:NO];
   }
   
+  id<KMPullRefreshTableViewDelegate> delegate = (id<KMPullRefreshTableViewDelegate>)self.tableView.delegate;
   if (tableHeaderView.status != KMPullRefreshTableHeaderViewLoading) {
-    id<KMPullRefreshTableViewDelegate> delegate = (id<KMPullRefreshTableViewDelegate>)self.tableView.delegate;
-    if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidLoad:)]) {
-      [delegate pullRefreshTableViewDidLoad:self.tableView];
+    if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidRefresh:)]) {
+      [delegate pullRefreshTableViewDidRefresh:self.tableView];
+    }
+  }
+  if (tableHeaderView.status != KMPullRefreshTableFooterViewLoading) {
+    if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidLoadMore:)]) {
+      [delegate pullRefreshTableViewDidLoadMore:self.tableView];
     }
   }
 }

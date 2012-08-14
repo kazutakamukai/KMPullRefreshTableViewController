@@ -63,8 +63,7 @@
   self.tableFooterView.status = KMPullRefreshTableFooterViewSuspending;
 }
 
-#pragma mark -
-#pragma mark Private
+#pragma mark - Private
 
 - (void)_setTableHeaderViewHidden:(BOOL)hidden {
   CGFloat topOffset = 0.0f;
