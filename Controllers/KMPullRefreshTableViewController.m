@@ -50,6 +50,18 @@
   self.tableView = pullRefreshTableView;
 }
 
+- (BOOL)isRefreshing {
+  return self.tableHeaderView.status != KMPullRefreshTableHeaderViewDefault ? YES : NO;
+}
+
+- (BOOL)isLoadingMore {
+  return self.tableFooterView.status != KMPullRefreshTableFooterViewDefault ? YES : NO;
+}
+
+- (BOOL)isSuspendedLoadMore {
+  return self.tableFooterView.status == KMPullRefreshTableFooterViewSuspending ? YES : NO;
+}
+
 - (void)stopRefresh {
   self.tableHeaderView.status = KMPullRefreshTableHeaderViewDefault;
   [self _setTableHeaderViewHidden:YES];
@@ -61,6 +73,10 @@
 
 - (void)suspendLoadMore {
   self.tableFooterView.status = KMPullRefreshTableFooterViewSuspending;
+}
+
+- (void)resumeLoadMore {
+  self.tableFooterView.status = KMPullRefreshTableFooterViewDefault;
 }
 
 #pragma mark - Private

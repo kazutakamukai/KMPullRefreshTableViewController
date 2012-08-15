@@ -54,7 +54,8 @@
       [self _stopIndicator];
       _label.text = NSLocalizedString(@"Pull down to refresh...", @"Header Default Status Text");
       if (_status == KMPullRefreshTableHeaderViewPulling) {
-        [self _animateRotationToUpper:NO];
+        [self _animateRotationToUpper:NO
+                               hidden:NO];
       }
       _imageView.alpha = 1.0f;
       
@@ -64,7 +65,8 @@
       [self _stopIndicator];
       _label.text = NSLocalizedString(@"Release to refresh...", @"Header Pulling Status Text");
       if (_status == KMPullRefreshTableHeaderViewDefault) {
-        [self _animateRotationToUpper:YES];
+        [self _animateRotationToUpper:YES
+                               hidden:NO];
       }
       _imageView.alpha = 1.0f;
       
@@ -74,7 +76,8 @@
       [self _startIndicator];
       _label.text = NSLocalizedString(@"Loading...", @"Header Loading Status Text");
       if (_status == KMPullRefreshTableHeaderViewPulling) {
-        [self _animateRotationToUpper:NO];
+        [self _animateRotationToUpper:NO
+                               hidden:YES];
       }
       
       break;
@@ -85,7 +88,8 @@
 
 #pragma mark - Private
 
-- (void)_animateRotationToUpper:(BOOL)Upper {
+- (void)_animateRotationToUpper:(BOOL)Upper
+                         hidden:(BOOL)hidden {
   CGFloat beginAngle = Upper ? 0.0f : M_PI;
   CGFloat endAngle   = Upper ? M_PI : 0.0f;
   
@@ -95,7 +99,7 @@
                       options:UIViewAnimationOptionAllowUserInteraction
                    animations:^{
                      _imageView.transform = CGAffineTransformMakeRotation(endAngle);
-                     if (_status == KMPullRefreshTableHeaderViewPulling) {
+                     if (hidden) {
                        _imageView.alpha = 0.0f;
                      }
                    }

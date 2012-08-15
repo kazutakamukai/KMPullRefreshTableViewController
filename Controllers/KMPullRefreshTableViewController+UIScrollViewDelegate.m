@@ -11,14 +11,6 @@
 #import "KMPullRefreshTableHeaderView.h"
 #import "KMPullRefreshTableFooterView.h"
 
-@interface KMPullRefreshTableViewController ()
-
-- (void)_setTableHeaderViewHidden:(BOOL)hidden;
-- (void)_refresh;
-- (void)_loadMore;
-
-@end
-
 @implementation KMPullRefreshTableViewController (UIScrollViewDelegate)
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -63,22 +55,9 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
                   willDecelerate:(BOOL)decelerate {
   KMPullRefreshTableHeaderView *tableHeaderView = self.tableHeaderView;
-  
   if (tableHeaderView.status == KMPullRefreshTableHeaderViewPulling) {
     [self _refresh];
     [self _setTableHeaderViewHidden:NO];
-  }
-  
-  id<KMPullRefreshTableViewDelegate> delegate = (id<KMPullRefreshTableViewDelegate>)self.tableView.delegate;
-  if (tableHeaderView.status != KMPullRefreshTableHeaderViewLoading) {
-    if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidRefresh:)]) {
-      [delegate pullRefreshTableViewDidRefresh:self.tableView];
-    }
-  }
-  if (tableHeaderView.status != KMPullRefreshTableFooterViewLoading) {
-    if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidLoadMore:)]) {
-      [delegate pullRefreshTableViewDidLoadMore:self.tableView];
-    }
   }
 }
 

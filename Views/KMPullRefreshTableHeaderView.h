@@ -19,3 +19,12 @@ typedef enum {
 @property (nonatomic) KMPullRefreshTableHeaderViewStatus status;
 
 @end
+
+@interface KMPullRefreshTableHeaderView ()
+
+- (void)_animateRotationToUpper:(BOOL)Upper
+                         hidden:(BOOL)hidden;
+- (void)_startIndicator;
+- (void)_stopIndicator;
+
+@end

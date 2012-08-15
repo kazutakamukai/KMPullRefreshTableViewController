@@ -7,12 +7,15 @@
 //
 
 #import "KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h"
+#import "KMPullRefreshTableFooterView.h"
 
 @implementation KMPullRefreshTableViewController (KMPullRefreshTableViewDelegate)
 
 - (void)pullRefreshTableViewWillReloadData:(UITableView *)tableView {
   [self stopRefresh];
-  [self stopLoadMore];
+  if (self.tableFooterView.status != KMPullRefreshTableFooterViewSuspending) {
+    [self stopLoadMore];
+  }
 }
 
 @end

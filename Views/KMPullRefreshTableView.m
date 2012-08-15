@@ -16,12 +16,7 @@
   if ([delegate respondsToSelector:@selector(pullRefreshTableViewWillReloadData:)]) {
     [delegate pullRefreshTableViewWillReloadData:self];
   }
-  
   [super reloadData];
-  
-  if ([delegate respondsToSelector:@selector(pullRefreshTableViewDidReloadData:)]) {
-    [delegate pullRefreshTableViewDidReloadData:self];
-  }
 }
 
 @end

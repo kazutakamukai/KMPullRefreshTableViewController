@@ -23,8 +23,21 @@
 @property (nonatomic, readonly) KMPullRefreshTableHeaderView *tableHeaderView;
 @property (nonatomic, readonly) KMPullRefreshTableFooterView *tableFooterView;
 
+- (BOOL)isRefreshing;
+- (BOOL)isLoadingMore;
+- (BOOL)isSuspendedLoadMore;
+
 - (void)stopRefresh;
 - (void)stopLoadMore;
 - (void)suspendLoadMore;
+- (void)resumeLoadMore;
+
+@end
+
+@interface KMPullRefreshTableViewController ()
+
+- (void)_setTableHeaderViewHidden:(BOOL)hidden;
+- (void)_refresh;
+- (void)_loadMore;
 
 @end

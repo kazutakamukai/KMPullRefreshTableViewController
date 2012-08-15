@@ -23,19 +23,8 @@
 }
 
 /*
-- (void)pullRefreshTableViewDidLoad:(UITableView *)tableView {
-}
-*/
-
-/*
 - (void)pullRefreshTableViewWillReload:(UITableView *)tableView {
   [super pullRefreshTableViewWillReload:tableView];
-}
-*/
-
-/*
-- (void)pullRefreshTableViewDidReload:(UITableView *)tableView {
-  [super pullRefreshTableViewDidReload:tableView];
 }
 */
 
