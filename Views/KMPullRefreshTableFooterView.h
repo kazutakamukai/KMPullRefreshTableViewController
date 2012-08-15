@@ -24,10 +24,3 @@ typedef enum {
  loadMoreTapEnabled:(BOOL)loadMoreTapEnabled;
 
 @end
-
-@interface KMPullRefreshTableFooterView ()
-
-- (void)_startIndicator;
-- (void)_stopIndicator;
-
-@end

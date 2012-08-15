@@ -7,12 +7,11 @@
 //
 
 #import "KMPullRefreshTableView.h"
-#import "KMPullRefreshTableViewDelegate.h"
 
 @implementation KMPullRefreshTableView
 
 - (void)reloadData {
-  id delegate = self.delegate;
+  id<KMPullRefreshTableViewDelegate> delegate = self.delegate;
   if ([delegate respondsToSelector:@selector(pullRefreshTableViewWillReloadData:)]) {
     [delegate pullRefreshTableViewWillReloadData:self];
   }

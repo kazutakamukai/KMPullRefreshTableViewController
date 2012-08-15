@@ -11,6 +11,14 @@
 #import "KMPullRefreshTableHeaderView.h"
 #import "KMPullRefreshTableFooterView.h"
 
+@interface KMPullRefreshTableViewController ()
+
+- (void)_setTableHeaderViewHidden:(BOOL)hidden;
+- (void)_refresh;
+- (void)_loadMore;
+
+@end
+
 @implementation KMPullRefreshTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style {

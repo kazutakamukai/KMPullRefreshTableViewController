@@ -33,11 +33,3 @@
 - (void)resumeLoadMore;
 
 @end
-
-@interface KMPullRefreshTableViewController ()
-
-- (void)_setTableHeaderViewHidden:(BOOL)hidden;
-- (void)_refresh;
-- (void)_loadMore;
-
-@end

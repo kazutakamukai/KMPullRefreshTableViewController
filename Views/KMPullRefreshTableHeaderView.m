@@ -8,6 +8,15 @@
 
 #import "KMPullRefreshTableHeaderView.h"
 
+@interface KMPullRefreshTableHeaderView ()
+
+- (void)_animateRotationToUpper:(BOOL)Upper
+                         hidden:(BOOL)hidden;
+- (void)_startIndicator;
+- (void)_stopIndicator;
+
+@end
+
 @implementation KMPullRefreshTableHeaderView {
  @private
   UIImageView             *_imageView;

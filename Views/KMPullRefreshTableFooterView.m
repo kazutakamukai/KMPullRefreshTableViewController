@@ -8,6 +8,13 @@
 
 #import "KMPullRefreshTableFooterView.h"
 
+@interface KMPullRefreshTableFooterView ()
+
+- (void)_startIndicator;
+- (void)_stopIndicator;
+
+@end
+
 @implementation KMPullRefreshTableFooterView {
  @private
   UIImageView             *_imageView;
