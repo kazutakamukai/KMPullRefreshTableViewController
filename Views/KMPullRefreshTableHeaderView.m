@@ -42,12 +42,10 @@
     [self addSubview:_label];
     
     _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Arrow.png"]];
-    _imageView.frame  = CGRectMake(0.0f, 0.0f, 22.0f, 42.0f);
     _imageView.center = imageCenter;
     [self addSubview:_imageView];
     
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _activityIndicatorView.frame  = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
     _activityIndicatorView.center = imageCenter;
     [self addSubview:_activityIndicatorView];
     
@@ -60,31 +58,33 @@
 - (void)setStatus:(KMPullRefreshTableHeaderViewStatus)status {
   switch (status) {
     case KMPullRefreshTableHeaderViewDefault:
-      [self _stopIndicator];
       _label.text = NSLocalizedString(@"Pull down to refresh...", @"Header Default Status Text");
-      if (_status == KMPullRefreshTableHeaderViewPulling) {
-        [self _animateRotationToUpper:NO
-                               hidden:NO];
+      if (_status == KMPullRefreshTableHeaderViewPulling || _status == KMPullRefreshTableHeaderViewLoading) {
+        [self _stopIndicator];
+        if (_status == KMPullRefreshTableHeaderViewPulling) {
+          [self _animateRotationToUpper:NO
+                                 hidden:NO];
+        }
+        _imageView.hidden = NO;
       }
-      _imageView.alpha = 1.0f;
       
       break;
       
     case KMPullRefreshTableHeaderViewPulling:
-      [self _stopIndicator];
       _label.text = NSLocalizedString(@"Release to refresh...", @"Header Pulling Status Text");
       if (_status == KMPullRefreshTableHeaderViewDefault) {
+        [self _stopIndicator];
         [self _animateRotationToUpper:YES
                                hidden:NO];
+        _imageView.hidden = NO;
       }
-      _imageView.alpha = 1.0f;
       
       break;
       
     case KMPullRefreshTableHeaderViewLoading:
-      [self _startIndicator];
       _label.text = NSLocalizedString(@"Loading...", @"Header Loading Status Text");
       if (_status == KMPullRefreshTableHeaderViewPulling) {
+        [self _startIndicator];
         [self _animateRotationToUpper:NO
                                hidden:YES];
       }
@@ -112,7 +112,12 @@
                        _imageView.alpha = 0.0f;
                      }
                    }
-                   completion:nil];
+                   completion:^(BOOL finished) {
+                     if (hidden) {
+                       _imageView.hidden = hidden;
+                       _imageView.alpha  = 1.0f;
+                     }
+                   }];
 }
 
 - (void)_startIndicator {

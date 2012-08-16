@@ -39,7 +39,6 @@
     }
     
     _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Diamond.png"]];
-    _imageView.frame  = CGRectMake(0.0f, 0.0f, 16.0f, 16.0f);
     _imageView.center = imageCenter;
     [self addSubview:_imageView];
     
