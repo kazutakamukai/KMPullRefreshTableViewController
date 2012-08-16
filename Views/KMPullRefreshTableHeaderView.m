@@ -32,13 +32,13 @@
     CGFloat centerY = center.y - CGRectGetMinY(frame);
     CGPoint imageCenter = CGPointMake(CGRectGetWidth(frame) / 7.5f, centerY);
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 150.0f, 30.0f)];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 30.0f)];
     _label.font            = [UIFont boldSystemFontOfSize:14.0f];
     _label.textColor       = [UIColor grayColor];
     _label.backgroundColor = [UIColor clearColor];
     _label.shadowColor     = [UIColor whiteColor];
     _label.shadowOffset    = CGSizeMake(0.0f, 1.0f);
-    _label.center          = CGPointMake(centerX, centerY);
+    _label.center          = CGPointMake(centerX + 20.0f, centerY);
     [self addSubview:_label];
     
     _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Arrow.png"]];
