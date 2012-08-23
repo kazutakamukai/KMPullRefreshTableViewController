@@ -10,16 +10,15 @@
 
 @interface KMPullRefreshTableFooterView ()
 
+@property (nonatomic, readwrite) UIImageView             *imageView;
+@property (nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
+
 - (void)_startIndicator;
 - (void)_stopIndicator;
 
 @end
 
-@implementation KMPullRefreshTableFooterView {
- @private
-  UIImageView             *_imageView;
-  UIActivityIndicatorView *_activityIndicatorView;
-}
+@implementation KMPullRefreshTableFooterView
 
 - (id)initWithFrame:(CGRect)frame
  loadMoreTapEnabled:(BOOL)loadMoreTapEnabled {
@@ -38,13 +37,15 @@
       [self addSubview:loadMoreButton];
     }
     
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Diamond.png"]];
-    _imageView.center = imageCenter;
-    [self addSubview:_imageView];
+    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Diamond.png"]];
+    UIImageView *imageView = self.imageView;
+    imageView.center = imageCenter;
+    [self addSubview:imageView];
     
-    _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _activityIndicatorView.center = imageCenter;
-    [self addSubview:_activityIndicatorView];
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIActivityIndicatorView *activityIndicatorView = self.activityIndicatorView;
+    activityIndicatorView.center = imageCenter;
+    [self addSubview:activityIndicatorView];
     
     self.status = KMPullRefreshTableFooterViewDefault;
   }
@@ -53,27 +54,28 @@
 }
 
 - (void)setStatus:(KMPullRefreshTableFooterViewStatus)status {
-  UIButton *loadMoreButton = self.loadMoreButton;
+  UIButton    *loadMoreButton = self.loadMoreButton;
+  UIImageView *imageView      = self.imageView;
   
   switch (status) {
     case KMPullRefreshTableFooterViewDefault:
       [self _stopIndicator];
       loadMoreButton.hidden = NO;
-      _imageView.hidden = YES;
+      imageView.hidden      = YES;
       
       break;
       
     case KMPullRefreshTableFooterViewLoading:
       [self _startIndicator];
       loadMoreButton.hidden = YES;
-      _imageView.hidden = YES;
+      imageView.hidden      = YES;
       
       break;
       
     case KMPullRefreshTableFooterViewSuspending:
       [self _stopIndicator];
       loadMoreButton.hidden = YES;
-      _imageView.hidden = NO;
+      imageView.hidden      = NO;
       
       break;
   }
@@ -85,13 +87,13 @@
 
 - (void)_startIndicator {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-  [_activityIndicatorView startAnimating];
+  [self.activityIndicatorView startAnimating];
 }
 
 - (void)_stopIndicator {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-  [_activityIndicatorView performSelectorInBackground:@selector(stopAnimating)
-                                           withObject:nil];
+  [self.activityIndicatorView performSelectorInBackground:@selector(stopAnimating)
+                                               withObject:nil];
 }
 
 @end
