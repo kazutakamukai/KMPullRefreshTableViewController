@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "KMPullRefreshTableViewDelegate.h"
 
+#define TABLE_HEADER_VIEW_HEIGHT 60.0f
+#define TABLE_FOOTER_VIEW_HEIGHT 44.0f
+
+@class KMPullRefreshTableHeaderView, KMPullRefreshTableFooterView;
+
 @interface KMPullRefreshTableView : UITableView
 
-@property(weak, nonatomic) id<KMPullRefreshTableViewDelegate> delegate;
+@property (weak, nonatomic) id<KMPullRefreshTableViewDelegate> delegate;
+
+@property (nonatomic) BOOL loadMoreEnabled;
+
+@property (nonatomic) KMPullRefreshTableHeaderView *pullRefreshTableHeaderView;
+@property (nonatomic) KMPullRefreshTableFooterView *pullRefreshTableFooterView;
 
 @end

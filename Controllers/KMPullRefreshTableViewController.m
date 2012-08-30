@@ -13,9 +13,6 @@
 
 @interface KMPullRefreshTableViewController ()
 
-@property (nonatomic, readwrite) KMPullRefreshTableHeaderView *tableHeaderView;
-@property (nonatomic, readwrite) KMPullRefreshTableFooterView *tableFooterView;
-
 - (void)_setTableHeaderViewHidden:(BOOL)hidden;
 - (void)_refresh;
 - (void)_loadMore;
@@ -35,60 +32,67 @@
   return self;
 }
 
+- (void)dealloc {
+  [self.pullRefreshTableFooterView.loadMoreButton removeTarget:self
+                                                        action:@selector(_loadMore)
+                                              forControlEvents:UIControlEventTouchDown];
+}
+
 - (void)loadView {
   [super loadView];
   
   UITableView *tableView = self.tableView;
-  UITableView *pullRefreshTableView = [[KMPullRefreshTableView alloc] initWithFrame:tableView.frame
-                                                                              style:tableView.style];
-  pullRefreshTableView.delegate   = tableView.delegate;
-  pullRefreshTableView.dataSource = tableView.dataSource;
+  KMPullRefreshTableView *pullRefreshTableView = [[KMPullRefreshTableView alloc] initWithFrame:tableView.frame
+                                                                                         style:tableView.style];
+  BOOL loadMoreEnabled = self.loadMoreEnabled;
+  pullRefreshTableView.loadMoreEnabled = loadMoreEnabled;
+  pullRefreshTableView.delegate        = (id<KMPullRefreshTableViewDelegate>)tableView.delegate;
+  pullRefreshTableView.dataSource      = tableView.dataSource;
   
-  CGFloat tableWidth       = CGRectGetWidth(pullRefreshTableView.frame);
-  CGRect  tableHeaderFrame = CGRectMake(0.0f, -TABLE_HEADER_VIEW_HEIGHT, tableWidth, TABLE_HEADER_VIEW_HEIGHT);
-  self.tableHeaderView = [[KMPullRefreshTableHeaderView alloc] initWithFrame:tableHeaderFrame];
-  [pullRefreshTableView addSubview:self.tableHeaderView];
-  if (self.loadMoreEnabled) {
-    CGRect tableFooterFrame = CGRectMake(0.0f, 0.0f, tableWidth, TABLE_FOOTER_VIEW_HEIGHT);
-    self.tableFooterView = [[KMPullRefreshTableFooterView alloc] initWithFrame:tableFooterFrame
-                                                            loadMoreTapEnabled:self.loadMoreTapEnabled];
-    KMPullRefreshTableFooterView *tableFooterView = self.tableFooterView;
-    pullRefreshTableView.tableFooterView = tableFooterView;
-    [tableFooterView.loadMoreButton addTarget:self
-                                       action:@selector(_loadMore)
-                             forControlEvents:UIControlEventTouchDown];
+  self.pullRefreshTableHeaderView = pullRefreshTableView.pullRefreshTableHeaderView;
+  if (loadMoreEnabled) {
+    self.pullRefreshTableFooterView = pullRefreshTableView.pullRefreshTableFooterView;
+    self.pullRefreshTableFooterView.loadMoreTapEnabled = self.loadMoreTapEnabled;
   }
   
   self.tableView = pullRefreshTableView;
 }
 
+- (void)viewDidLoad {
+  if (self.loadMoreTapEnabled) {
+    [self.pullRefreshTableFooterView.loadMoreButton addTarget:self
+                                                       action:@selector(_loadMore)
+                                             forControlEvents:UIControlEventTouchDown];
+  }
+}
+
 - (BOOL)isRefreshing {
-  return self.tableHeaderView.status != KMPullRefreshTableHeaderViewDefault ? YES : NO;
+  return self.pullRefreshTableHeaderView.status != KMPullRefreshTableHeaderViewDefault ? YES : NO;
 }
 
 - (BOOL)isLoadingMore {
-  return self.tableFooterView.status != KMPullRefreshTableFooterViewDefault ? YES : NO;
+  return self.pullRefreshTableFooterView.status != KMPullRefreshTableFooterViewDefault ? YES : NO;
 }
 
 - (BOOL)isSuspendedLoadMore {
-  return self.tableFooterView.status == KMPullRefreshTableFooterViewSuspending ? YES : NO;
+  return self.pullRefreshTableFooterView.status == KMPullRefreshTableFooterViewSuspending ? YES : NO;
 }
 
 - (void)stopRefresh {
-  self.tableHeaderView.status = KMPullRefreshTableHeaderViewDefault;
+  self.pullRefreshTableHeaderView.status = KMPullRefreshTableHeaderViewDefault;
   [self _setTableHeaderViewHidden:YES];
 }
 
 - (void)stopLoadMore {
-  self.tableFooterView.status = KMPullRefreshTableFooterViewDefault;
+  self.pullRefreshTableFooterView.status = KMPullRefreshTableFooterViewDefault;
 }
 
 - (void)suspendLoadMore {
-  self.tableFooterView.status = KMPullRefreshTableFooterViewSuspending;
+  self.pullRefreshTableFooterView.status = KMPullRefreshTableFooterViewSuspending;
 }
 
 - (void)resumeLoadMore {
-  self.tableFooterView.status = KMPullRefreshTableFooterViewDefault;
+  self.pullRefreshTableFooterView.status = KMPullRefreshTableFooterViewDefault;
 }
 
 #pragma mark - Private
@@ -96,7 +100,7 @@
 - (void)_setTableHeaderViewHidden:(BOOL)hidden {
   CGFloat topOffset = 0.0f;
   if (!hidden) {
-    topOffset = CGRectGetHeight(self.tableHeaderView.frame);
+    topOffset = CGRectGetHeight(self.pullRefreshTableHeaderView.frame);
   }
   
   [UIView animateWithDuration:self.animateReturnAfterRefreshWithDuration
@@ -110,7 +114,7 @@
 
 - (void)_refresh {
   id<KMPullRefreshTableViewDelegate> delegate = (id<KMPullRefreshTableViewDelegate>)self.tableView.delegate;
-  self.tableHeaderView.status = KMPullRefreshTableHeaderViewLoading;
+  self.pullRefreshTableHeaderView.status = KMPullRefreshTableHeaderViewLoading;
   if ([delegate respondsToSelector:@selector(pullRefreshTableViewWillRefresh:)]) {
     [delegate pullRefreshTableViewWillRefresh:self.tableView];
   }
@@ -118,7 +122,7 @@
 
 - (void)_loadMore {
   id<KMPullRefreshTableViewDelegate> delegate = (id<KMPullRefreshTableViewDelegate>)self.tableView.delegate;
-  self.tableFooterView.status = KMPullRefreshTableFooterViewLoading;
+  self.pullRefreshTableFooterView.status = KMPullRefreshTableFooterViewLoading;
   if ([delegate respondsToSelector:@selector(pullRefreshTableViewWillLoadMore:)]) {
     [delegate pullRefreshTableViewWillLoadMore:self.tableView];
   }

@@ -23,8 +23,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   UITableView                  *tableView       = self.tableView;
-  KMPullRefreshTableHeaderView *tableHeaderView = self.tableHeaderView;
-  KMPullRefreshTableFooterView *tableFooterView = self.tableFooterView;
+  KMPullRefreshTableHeaderView *tableHeaderView = self.pullRefreshTableHeaderView;
+  KMPullRefreshTableFooterView *tableFooterView = self.pullRefreshTableFooterView;
   
   CGFloat topOffset    = scrollView.contentOffset.y;
   CGFloat headerHeight = CGRectGetHeight(tableHeaderView.frame);
@@ -34,7 +34,7 @@
     if (tableView.dragging &&
         threshold <= topOffset && topOffset < headerHeight) {
       CGFloat offset = MAX(-tableView.contentOffset.y, 0.0f);
-      offset = MIN(offset, TABLE_HEADER_VIEW_HEIGHT);
+      offset = MIN(offset, headerHeight);
       tableView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
 		}
     return;
@@ -62,7 +62,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
                   willDecelerate:(BOOL)decelerate {
-  KMPullRefreshTableHeaderView *tableHeaderView = self.tableHeaderView;
+  KMPullRefreshTableHeaderView *tableHeaderView = self.pullRefreshTableHeaderView;
   if (tableHeaderView.status == KMPullRefreshTableHeaderViewPulling) {
     [self _refresh];
     [self _setTableHeaderViewHidden:NO];

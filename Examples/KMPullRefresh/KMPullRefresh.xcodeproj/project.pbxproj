@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F11B887F15D39CD800F12D89 /* Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = F11B887E15D39CD800F12D89 /* Diamond.png */; };
+		F11B887F15D39CD800F12D89 /* Diamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F11B887E15D39CD800F12D89 /* Diamond@2x.png */; };
 		F139351B15D1F6B6007213ED /* KMPullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F139351A15D1F6B6007213ED /* KMPullRefreshTableView.m */; };
 		F139352315D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F139352215D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.m */; };
 		F14AB12715CB764900495802 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14AB12615CB764900495802 /* UIKit.framework */; };
@@ -16,7 +16,7 @@
 		F14AB13115CB764900495802 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F14AB12F15CB764900495802 /* InfoPlist.strings */; };
 		F14AB13315CB764900495802 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB13215CB764900495802 /* main.m */; };
 		F14AB13715CB764900495802 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB13615CB764900495802 /* AppDelegate.m */; };
-		F14AB15B15CB826A00495802 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F14AB14F15CB826A00495802 /* Arrow.png */; };
+		F14AB15B15CB826A00495802 /* Arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F14AB14F15CB826A00495802 /* Arrow@2x.png */; };
 		F14AB15C15CB826A00495802 /* KMPullRefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15115CB826A00495802 /* KMPullRefreshTableFooterView.m */; };
 		F14AB15D15CB826A00495802 /* KMPullRefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15315CB826A00495802 /* KMPullRefreshTableHeaderView.m */; };
 		F14AB15F15CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB15715CB826A00495802 /* KMPullRefreshTableViewController+UIScrollViewDelegate.m */; };
@@ -24,10 +24,12 @@
 		F14AB18315CBAE1F00495802 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB18215CBAE1F00495802 /* RootViewController.m */; };
 		F14AB18E15CBB00800495802 /* RootViewController+UITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB18D15CBB00800495802 /* RootViewController+UITableViewDataSource.m */; };
 		F14AB19115CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14AB19015CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m */; };
+		F1DA7B7915EFC0EC0007F307 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DA7B7815EFC0EC0007F307 /* Arrow.png */; };
+		F1DA7B7B15EFC0F40007F307 /* Diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DA7B7A15EFC0F40007F307 /* Diamond.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F11B887E15D39CD800F12D89 /* Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diamond.png; sourceTree = "<group>"; };
+		F11B887E15D39CD800F12D89 /* Diamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diamond@2x.png"; sourceTree = "<group>"; };
 		F139351915D1F6B6007213ED /* KMPullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableView.h; sourceTree = "<group>"; };
 		F139351A15D1F6B6007213ED /* KMPullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableView.m; sourceTree = "<group>"; };
 		F139352115D1FCB2007213ED /* KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KMPullRefreshTableViewController+KMPullRefreshTableViewDelegate.h"; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		F14AB13415CB764900495802 /* KMPullRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KMPullRefresh-Prefix.pch"; sourceTree = "<group>"; };
 		F14AB13515CB764900495802 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F14AB13615CB764900495802 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F14AB14F15CB826A00495802 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
+		F14AB14F15CB826A00495802 /* Arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow@2x.png"; sourceTree = "<group>"; };
 		F14AB15015CB826A00495802 /* KMPullRefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableFooterView.h; sourceTree = "<group>"; };
 		F14AB15115CB826A00495802 /* KMPullRefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPullRefreshTableFooterView.m; sourceTree = "<group>"; };
 		F14AB15215CB826A00495802 /* KMPullRefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPullRefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		F14AB18D15CBB00800495802 /* RootViewController+UITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RootViewController+UITableViewDataSource.m"; path = "RootViewController/RootViewController+UITableViewDataSource.m"; sourceTree = "<group>"; };
 		F14AB18F15CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RootViewController+KMPullRefreshTableViewDelegate.h"; path = "RootViewController/RootViewController+KMPullRefreshTableViewDelegate.h"; sourceTree = "<group>"; };
 		F14AB19015CBB02F00495802 /* RootViewController+KMPullRefreshTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RootViewController+KMPullRefreshTableViewDelegate.m"; path = "RootViewController/RootViewController+KMPullRefreshTableViewDelegate.m"; sourceTree = "<group>"; };
+		F1DA7B7815EFC0EC0007F307 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
+		F1DA7B7A15EFC0F40007F307 /* Diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diamond.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +201,10 @@
 		F14AB16515CB83AA00495802 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F14AB14F15CB826A00495802 /* Arrow.png */,
-				F11B887E15D39CD800F12D89 /* Diamond.png */,
+				F1DA7B7815EFC0EC0007F307 /* Arrow.png */,
+				F14AB14F15CB826A00495802 /* Arrow@2x.png */,
+				F1DA7B7A15EFC0F40007F307 /* Diamond.png */,
+				F11B887E15D39CD800F12D89 /* Diamond@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14AB13115CB764900495802 /* InfoPlist.strings in Resources */,
-				F14AB15B15CB826A00495802 /* Arrow.png in Resources */,
-				F11B887F15D39CD800F12D89 /* Diamond.png in Resources */,
+				F14AB15B15CB826A00495802 /* Arrow@2x.png in Resources */,
+				F11B887F15D39CD800F12D89 /* Diamond@2x.png in Resources */,
+				F1DA7B7915EFC0EC0007F307 /* Arrow.png in Resources */,
+				F1DA7B7B15EFC0F40007F307 /* Diamond.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "KMPullRefreshTableViewDelegate.h"
 
-#define TABLE_HEADER_VIEW_HEIGHT 60.0f
-#define TABLE_FOOTER_VIEW_HEIGHT 44.0f
-
 @class KMPullRefreshTableHeaderView, KMPullRefreshTableFooterView;
 
 @interface KMPullRefreshTableViewController : UITableViewController<KMPullRefreshTableViewDelegate>
@@ -20,8 +17,8 @@
 @property (nonatomic) BOOL    loadMoreTapEnabled;
 @property (nonatomic) CGFloat animateReturnAfterRefreshWithDuration;
 
-@property (nonatomic, readonly) KMPullRefreshTableHeaderView *tableHeaderView;
-@property (nonatomic, readonly) KMPullRefreshTableFooterView *tableFooterView;
+@property (nonatomic) KMPullRefreshTableHeaderView *pullRefreshTableHeaderView;
+@property (nonatomic) KMPullRefreshTableFooterView *pullRefreshTableFooterView;
 
 - (BOOL)isRefreshing;
 - (BOOL)isLoadingMore;

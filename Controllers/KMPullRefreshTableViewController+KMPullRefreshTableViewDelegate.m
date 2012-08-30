@@ -13,7 +13,7 @@
 
 - (void)pullRefreshTableViewWillReloadData:(UITableView *)tableView {
   [self stopRefresh];
-  if (self.tableFooterView.status != KMPullRefreshTableFooterViewSuspending) {
+  if (self.pullRefreshTableFooterView.status != KMPullRefreshTableFooterViewSuspending) {
     [self stopLoadMore];
   }
 }

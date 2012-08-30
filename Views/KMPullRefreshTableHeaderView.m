@@ -10,10 +10,6 @@
 
 @interface KMPullRefreshTableHeaderView ()
 
-@property (nonatomic, readwrite) UIImageView             *imageView;
-@property (nonatomic, readwrite) UILabel                 *label;
-@property (nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
-
 - (void)_animateRotationToUpper:(BOOL)Upper
                          hidden:(BOOL)hidden;
 - (void)_startIndicator;
@@ -26,9 +22,9 @@
 - (id)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
-    CGPoint center = self.center;
-    CGFloat centerX = center.x - CGRectGetMinX(frame);
-    CGFloat centerY = center.y - CGRectGetMinY(frame);
+    CGPoint center      = self.center;
+    CGFloat centerX     = center.x - CGRectGetMinX(frame);
+    CGFloat centerY     = center.y - CGRectGetMinY(frame);
     CGPoint imageCenter = CGPointMake(CGRectGetWidth(frame) / 7.5f, centerY);
     
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 30.0f)];

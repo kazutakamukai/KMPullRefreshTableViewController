@@ -18,4 +18,8 @@ typedef enum {
 
 @property (nonatomic) KMPullRefreshTableHeaderViewStatus status;
 
+@property (nonatomic) UILabel                 *label;
+@property (nonatomic) UIImageView             *imageView;
+@property (nonatomic) UIActivityIndicatorView *activityIndicatorView;
+
 @end

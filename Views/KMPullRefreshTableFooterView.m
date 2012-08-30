@@ -10,9 +10,6 @@
 
 @interface KMPullRefreshTableFooterView ()
 
-@property (nonatomic, readwrite) UIImageView             *imageView;
-@property (nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
-
 - (void)_startIndicator;
 - (void)_stopIndicator;
 
@@ -20,22 +17,11 @@
 
 @implementation KMPullRefreshTableFooterView
 
-- (id)initWithFrame:(CGRect)frame
- loadMoreTapEnabled:(BOOL)loadMoreTapEnabled {
+- (id)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
     CGPoint center = self.center;
     CGPoint imageCenter = CGPointMake(center.x - CGRectGetMinX(frame), center.y - CGRectGetMinY(frame));
-    
-    if (loadMoreTapEnabled) {
-      UIButton *loadMoreButton = self.loadMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-      loadMoreButton.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(frame), CGRectGetHeight(frame));
-      [loadMoreButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-      [loadMoreButton setTitle:NSLocalizedString(@"Load more...", @"Footer Default Status Text")
-              forState:UIControlStateNormal];
-      [[loadMoreButton titleLabel] setFont:[UIFont boldSystemFontOfSize:14.0f]];
-      [self addSubview:loadMoreButton];
-    }
     
     self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Diamond.png"]];
     UIImageView *imageView = self.imageView;
@@ -81,6 +67,28 @@
   }
   
   _status = status;
+}
+
+- (void)setLoadMoreTapEnabled:(BOOL)loadMoreTapEnabled {
+  UIButton *loadMoreButton = self.loadMoreButton;
+  if (loadMoreTapEnabled) {
+    if (!loadMoreButton) {
+      self.loadMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+      loadMoreButton = self.loadMoreButton;
+      CGRect frame = self.frame;
+      loadMoreButton.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(frame), CGRectGetHeight(frame));
+      [loadMoreButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+      [loadMoreButton setTitle:NSLocalizedString(@"Load more...", @"Footer Default Status Text")
+                      forState:UIControlStateNormal];
+      [[loadMoreButton titleLabel] setFont:[UIFont boldSystemFontOfSize:14.0f]];
+    }
+    
+    [self addSubview:loadMoreButton];
+  } else {
+    [loadMoreButton removeFromSuperview];
+  }
+  
+  _loadMoreTapEnabled = loadMoreTapEnabled;
 }
 
 #pragma mark - Private

@@ -18,9 +18,10 @@ typedef enum {
 
 @property (nonatomic) KMPullRefreshTableFooterViewStatus status;
 
-@property (nonatomic) UIButton *loadMoreButton;
+@property (nonatomic) BOOL loadMoreTapEnabled;
 
-- (id)initWithFrame:(CGRect)frame
- loadMoreTapEnabled:(BOOL)loadMoreTapEnabled;
+@property (nonatomic) UIButton                *loadMoreButton;
+@property (nonatomic) UIImageView             *imageView;
+@property (nonatomic) UIActivityIndicatorView *activityIndicatorView;
 
 @end
